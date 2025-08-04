@@ -1,0 +1,114 @@
+body {
+  font-family: "Times New Roman", Times, serif;
+  margin: 40px;
+  color: #000;
+  background-color: #fff;
+ 
+  
+}
+.abc{
+    text-align:center
+}
+@keyframes moveBackground {
+  0% {
+    background-position: 0 0; /* Start at the top-left corner */
+  }
+  100% {
+    background-position: 100% 0; /* Move to the right */
+  }
+}
+
+h1 {
+  text-align: center;
+  font-weight: bold;
+  font-size: 20px;
+  margin-bottom: 0;
+}
+
+h2, h3, h4 {
+  font-family: "Times New Roman", Times, serif;
+  margin: 5px 0;
+}
+
+h2 {
+  text-align: center;
+  font-weight: bold;
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+h3 {
+  font-weight: bold;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  font-size: 16px;
+}
+
+ol, ul {
+  padding-left: 20px;
+  margin: 0 0 20px 0;
+}
+
+ol li {
+  margin-bottom: 10px;
+  line-height: 1.4;
+}
+
+input[type="text"], input[type="email"], input[type="tel"], input[type="number"], input[type="date"] {
+  border: none;
+  border-bottom: 1px solid #000;
+  outline: none;
+  font-size: 14px;
+  width: 300px;
+  padding: 2px 5px;
+  font-family: "Times New Roman", serif;
+}
+
+.small-input {
+  width: 150px;
+}
+
+.sublist {
+  list-style-type: lower-alpha;
+  margin-left: 20px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+table, th, td {
+  border: 1px solid black;
+}
+
+th {
+  font-weight: bold;
+  text-align: center;
+  padding: 6px 8px;
+  font-size: 14px;
+}
+
+td {
+  padding: 6px 8px;
+  font-family: "Times New Roman", serif;
+}
+
+td.center {
+  text-align: center;
+}
+
+.footer-note {
+  font-size: 12px;
+  font-style: italic;
+  margin-top: 20px;
+}
+
+.signature {
+  margin-top: 40px;
+  text-align: right;
+  font-weight: bold;
+  font-size: 14px;
+}
