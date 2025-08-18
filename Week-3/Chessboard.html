@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Chessboard with Pieces</title>
+  <style>
+    body {
+      display: flex; justify-content: center; align-items: center;
+      height: 100vh; margin: 0; background: white;
+    }
+    .chessboard {
+      display: grid; grid-template-columns: repeat(8, 60px);
+      grid-template-rows: repeat(8, 60px); border: 2px solid black;
+    }
+    .square {
+      width: 60px; height: 60px; font-size: 40px;
+      text-align: center; line-height: 60px;
+      font-family: "Segoe UI Symbol", "Arial Unicode MS", serif;
+      user-select: none;
+    }
+    .white { background: white; }
+    .black { background: black; }
+    .white-piece { color: white; }
+    .black-piece { color: black; }
+    .outline-piece.white-piece { text-shadow: -1px -1px 0 black,1px -1px 0 black,-1px 1px 0 black,1px 1px 0 black; }
+    .outline-piece.black-piece { text-shadow: -1px -1px 0 white,1px -1px 0 white,-1px 1px 0 white,1px 1px 0 white; }
+  </style>
+</head>
+<body>
+  <div class="chessboard" id="board"></div>
+  <script>
+    const board=document.getElementById('board');
+    const pieces=['&#9820;','&#9822;','&#9821;','&#9819;','&#9818;','&#9821;','&#9822;','&#9820;'], pawn='&#9823;';
+    for(let r=0;r<8;r++)for(let c=0;c<8;c++){
+      const sq=document.createElement('div'),whiteSq=(r+c)%2===0;
+      sq.className='square '+(whiteSq?'white':'black');
+      let piece='',whitePiece=false;
+      if(r===0){piece=pieces[c];} 
+      else if(r===1){piece=pawn;} 
+      else if(r===6){piece=pawn;whitePiece=true;} 
+      else if(r===7){piece=pieces[c];whitePiece=true;}
+      if(piece){
+        sq.innerHTML=piece;
+        sq.classList.add(whitePiece?'white-piece':'black-piece');
+        if((whitePiece&&whiteSq)||(!whitePiece&&!whiteSq))sq.classList.add('outline-piece');
+      }
+      board.appendChild(sq);
+    }
+  </script>
+</body>
+</html>
